@@ -1,0 +1,33 @@
+
+sh wget -o robot.txt https://afs-prod.appspot.com/api/v2/robot_file/robot.txt
+writeFile(file: 'robot.txt', text: data) 
+
+sh wget -o robot.txt https://afs-dev.appspot.com/api/v2/robot_file/robot.txt
+writeFile(file: 'robot.txt', text: data) 
+
+sh wget -o robot.txt https://afs-int.appspot.com/api/v2/robot_file/robot.txt
+sh 'rm -f robot.txt'
+writeFile(file: 'robot.txt', readFile("robot.txt")) 
+
+
+
+sh wget https://algs4.cs.princeton.edu/14analysis/1Mints.txt
+
+
+
+
+
+
+sh 'rm -f robot.txt'
+sh wget -o robot.txt https://afs-prod.appspot.com/api/v2/robot_file/robot.txt
+writeFile(file: 'robot.txt', readFile("robot.txt")) 
+
+
+sh 'rm -f robot.txt'
+sh wget -o robot.txt https://afs-dev.appspot.com/api/v2/robot_file/robot.txt
+writeFile(file: 'robot.txt', readFile("robot.txt")) 
+
+
+sh 'rm -f robot.txt'
+sh wget -o robot.txt https://afs-int.appspot.com/api/v2/robot_file/robot.txt
+writeFile(file: 'robot.txt', readFile("robot.txt")) 
