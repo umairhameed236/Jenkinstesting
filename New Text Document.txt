@@ -11,7 +11,7 @@ writeFile(file: 'robot.txt', readFile("robot.txt"))
 
 
 
-sh wget https://algs4.cs.princeton.edu/14analysis/1Mints.txt
+#sh wget https://algs4.cs.princeton.edu/14analysis/1Mints.txt
 
 
 
