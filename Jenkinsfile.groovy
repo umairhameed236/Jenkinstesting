@@ -5,6 +5,7 @@ stage('Test') {
 steps {
 echo 'Application in Testing Phase…'
   echo 'Application Tested'
+  echo 'Application Deployed'
 }
 }
 stage('Deploy CloudHub') {
