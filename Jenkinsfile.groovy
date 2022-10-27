@@ -3,10 +3,12 @@ agent any
 stages {
 stage('Test') {
 steps {
-echo 'Application in Testing Phase…'
+echo 'Welcome to AP-Testing'
+  echo 'Application in Testing Phase…'
   echo 'Application Tested'
   echo 'Application Deployed'
   echo 'Application Displayed'
+  
 }
 }
 stage('Deploy CloudHub') {
