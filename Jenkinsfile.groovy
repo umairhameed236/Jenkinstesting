@@ -15,9 +15,17 @@ echo 'Deploying to the configured environment….'
 }
 }
 }
-post {
-        always {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+
+ catch (Exception e) {
+        print e.message
+        if (!(e instanceof InterruptedException || (e.message != null && e.message.contains("task was cancelled")))) {
+            currentBuild.result = 'FAILURE'
+
+            step([$class                  : 'Mailer',
+                  notifyEveryUnstableBuild: true,
+                  recipients              : 'umair.hameed236@gmail.com',
+                  sendToIndividuals       : true])
         }
     }
 }
+
