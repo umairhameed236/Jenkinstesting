@@ -15,8 +15,7 @@ echo 'Deploying to the configured environment….'
 }
 }
 }
-
- catch (Exception e) {
+    catch (Exception e) {
         print e.message
         if (!(e instanceof InterruptedException || (e.message != null && e.message.contains("task was cancelled")))) {
             currentBuild.result = 'FAILURE'
