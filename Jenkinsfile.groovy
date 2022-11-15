@@ -17,7 +17,7 @@ echo 'Deploying to the configured environment….'
 }
     catch (Exception e) {
         print e.message
-        if (!(e instanceof InterruptedException || (e.message != null && e.message.contains("task was cancelled")))) {
+         if (!(e instanceof InterruptedException || (e.message != null && e.message.contains("task was cancelled"))) && (BRANCH_NAME != 'dev')) {
             currentBuild.result = 'FAILURE'
 
             step([$class                  : 'Mailer',
